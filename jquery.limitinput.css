@@ -1,0 +1,4 @@
+/* PLUGIN STARTS HERE */
+div.jquery-limitinput-container { position: absolute; z-index: 9999; color: #333; padding: 5px !important; font-size: 10px; font-family: "Trebuchet MS", Arial, sans-serif; display: none; text-align: right !important; }
+.jquery-limitinput-element{  }
+/* PLUGIN ENDS HERE */

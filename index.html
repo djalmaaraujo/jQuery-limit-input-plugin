@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>jQuery limitInput plugin v0.2.1 - Examples</title>
+<link href="jquery.limitinput.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+/*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.5.2
+*/
+html{color:#000;background:#fff;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym {border:0;font-variant:normal;}
+/* to preserve line-height and selector appearance */
+sup {vertical-align:text-top;}
+sub {vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+/*to enable resizing for IE*/
+
+	* {font-family: Tahoma, Arial, sans-serif}
+	form {width: 400px; height:600px; padding:30px 0 0 0;}
+	h1 {font-size: 22px; font-weight: bold; display: block; margin: 0 0 20px 0;}
+	.example {padding: 10px; border:1px solid black; margin: 0 0 50px 0; background: #fff}
+	.howto{padding: 10px; border:1px solid black; margin: 0 0 0px 0; background: #f5f5f5; color:#333;}
+	p {font-size: 11px; padding: 10px 0 0 0;}
+	strong {font-weight: bold}
+	textarea {width: 300px; display: block}
+	label {display: block}
+	cite {font-size: 20px;}
+	#developer {clear: both; border: 1px solid #333; padding: 5px}
+	ul li {display: block}
+</style>
+</head>
+
+<body style="padding:20px;">
+<cite>jQuery limitInput Plugin v0.2.1<Br />
+Work with: textarea and input(text,password)<br />by: <a href="http://www.djalmaaraujo.com.br/" title="Djalma Araújo">Djalma Araújo</a></cite>
+<br /><br />
+<cite>Info:</cite>
+<div class="howto">
+<ul>
+	<li>- Work with: Firefox, Opera, Chrome, Safari, IE7+</li>
+	<li>- Minified version avaliable</li>
+	<li>- MIT License</li>
+	<li>- You can change whatever you want</li>
+	<li>- Sorry my english. I know it SUX</li>
+</ul>
+</div>
+<br /><br />
+<cite>History</cite>
+<div class="howto">
+	<p>Version 0.2.1 final</p>
+	<ul>
+		<li>Fixed bug. The keyCode SPACE was not count.</li>
+		<li>Fixed Bug. When the limit was over, keyCode was disable. Add allowed key codes</li>
+	</ul>
+	<p>Version 0.2.1</p>
+	<ul>
+		<li>Add checkVal() function to block typing with no escape caracter.</li>
+		<li>tnks to Ruan Carlos</li>
+		<li>tnks to Wilker Lúcio for support</li>
+	</ul>
+	<p>Version 0.2</p>
+	<ul>
+		<li>Add keydown, keypress, focus, mouseover, mouseout events</li>
+		<li>Remove keypress delay</li>
+	</ul>
+</div>
+<br /><br />
+<cite>Install</cite>
+<div class="howto">
+
+	<p>Call jquery. It's recommended to call on google code. Latest version.</p>
+	<code>
+&lt;script type="text/javascript" src="http://www.google.com/jsapi">&lt;/script><br />
+&lt;script type="text/javascript">google.load("jquery", "1.3.2");&lt;/script><Br />
+
+<p>Download <a href="http://web.djalmaaraujo.com.br/projects/jquery/jquerylimitinput/0.2.1/jquery.limitInput.zip">jQuery limitInput plugin v0.2.1</a>. Call limitInput plugin.</p>
+&lt;script type="text/javascript" src="jquery.limitinput.js">&lt;/script><br />
+
+<p>Add the jquery.limitInput.css at your head page.</p>
+&lt;link rel="stylesheet" href="jquery.limitinput.css" media="all" />
+
+	</code>
+</div>
+<br /><br />
+<cite>Examples</cite>
+
+<form action="/" name="example">
+
+	<div class="example">
+		<h1>Eg1: This example limits to 10 caracters and blocks user typing</h1>
+		<label for="limitInput-eg1">Your name goes here:</label>
+		<input type="text" value="" name="name" id="limitInput-eg1" />
+		<p>ps: If your page have only one instance of limitInput plugin, you don't need to declarete all settings. In this case, if the example 2 doesn't exists, you could hide the parameter: <strong>blockTyping: false</strong>, because it's a default setting.</p>
+	</div>
+	
+	<div class="example">
+		<h1>Eg2: This example limits to 10 caracters and no block user typing</h1>
+		<label for="limitInput-eg2">Your email goes here:</label>
+		<input type="text" value="" name="email" id="limitInput-eg2" />
+	</div>
+	
+	<div class="example">
+		<h1>Eg3: This example shows a textarea using the plugin with default text and don't block typing</h1>
+		<label for="obs">Your observations goes here:</label>
+		<textarea name="obs" id="limitInput-eg3">Note the word 'caracter' is now 'letras'</textarea>
+		<p>In this example you can change to your language the word: <strong>'caracters'</strong> withou change the plugin. You can change the sufix 'left' and the 'exceded' to.</p>
+	</div>
+	
+	<div id="developer">
+	this script is developed by <a href="http://www.djalmaaraujo.com.br/" title="Djalma Araújo">Djalma Araújo</a>
+	<br />
+	Bugs: contato@djalmaaraujo.com.br or @djalmaaraujo on twitter
+	</div>
+</form>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<script type="text/javascript" src="jquery.limitinput.js"></script>
+<script type="text/javascript">
+$(function(){
+
+	
+	//Example 1
+	$("#limitInput-eg1").limitInput({
+		limit: 10,
+		blockTyping: true,
+		charName: 'caracters',
+		leftString: 'left',
+		excededString: 'exceded'
+	});
+
+	//Example 2
+	$("#limitInput-eg2").limitInput({
+		limit: 10,
+		blockTyping: false,
+		charName: 'caracters',
+		leftString: 'left',
+		excededString: 'exceded'
+	});
+
+	//Example 3
+	$("#limitInput-eg3").limitInput({
+		limit: 42,
+		blockTyping: false,
+		charName: 'letras',
+		leftString: 'restantes',
+		excededString: 'excedidas'
+	});	
+});
+</script>
+</body>
+</html>
